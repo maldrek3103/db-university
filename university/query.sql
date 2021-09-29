@@ -12,3 +12,9 @@ WHERE `cfu` > '10'
 SELECT `name`,`surname`, `date_of_birth`
 FROM `students`
 WHERE DATE_SUB(CURDATE(),INTERVAL 30 YEAR) > `date_of_birth`
+
+-- Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
+SELECT `name`, `period`, `year`
+FROM `courses`
+WHERE `period` = 'I semestre'
+AND `year` = 1
