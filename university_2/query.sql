@@ -21,3 +21,13 @@ RIGHT JOIN `teachers`
 ON `teachers`.`id` = `course_teacher`.`teacher_id`
 WHERE `teachers`.`name` = 'Fulvio'
 AND `teachers`.`surname` = 'Amato'
+
+--Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+SELECT `courses`.*,`degrees`.*,`teachers`.*
+FROM `courses`
+JOIN `degrees`
+ON `courses`.`degree_id` = `degrees`.`id`
+JOIN `course_teacher`
+ON `courses`.`id` = `course_teacher`.`course_id`
+JOIN `teachers`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
